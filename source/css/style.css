@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {  scroll-behavior: smooth; }
+
+body {
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+
+.container-page {
+    height: 100vh;
+    width: 1600px;
+    max-width: 1600px;
+    padding: 40px;
+}
+
+.container-page.view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+a {
+    font-style: none;
+    text-decoration: none;
+    color: chocolate;
+}
+
+button {
+    outline: none;
+    padding: 15px 15px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #64d44e;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    min-width: 250px;
+    margin: 0 auto
+}
+
+.container-page.view button {
+    margin: 0;
+    align-self: flex-start;
+    margin-bottom: 40px;
+}
+
+.form {
+    display: flex;
+    margin: 20px;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 400px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+.form-group input.error {
+    border: 2px solid red;
+}
+
+.error-text {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    min-height: 18px;
+}
+
+.form-btns {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.help {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.sort {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 40px 0 20px;
+}
+
+.sort select {
+    height: 25px;
+    font-size: 14px;
+    color: #252525;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+.recipesList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 450px);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.recipe-card {
+    border: 2px solid chocolate;
+    border-radius: 20px;
+    max-width: 450px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 20px 60px;
+}
+
+.container-page.view .recipe-card {
+    flex-direction: row;
+    min-width: 1600px;
+    padding: 20px;
+    gap: 50px;
+}
+
+.container-page.view img,
+.recipe-card img {
+    display: block;
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 30px;
+}
+
+.container-page.view img {
+    width: 800px;
+    height: 600px;
+    flex: 1;
+}
+
+.container-page.view .inner-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80%;
+}
+
+.recipe-card .card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.card-ingredients {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.recipe-card .card-info p { text-wrap: wrap; }
+
+.card-btns {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 8px;
+    justify-content: center;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-buttons.my-recipes {
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.all-ingredients-list h3,
+.selectd-ingredients-list h3 {
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 15px;
+    margin-top: 40px;
+}
+
+.container-page.view ul,
+.all-ingredients-list ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.container-page.view ul li,
+.all-ingredients-list ul li,
+.drop-zone span {
+    display: inline-block;
+    border: 1px solid #64d44e;
+    border-radius: 10px;
+    padding: 10px;
+    max-height: 40px;
+}
+
+.drop-zone {
+    border: 2px dashed chocolate;
+    min-height: 200px;
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+}

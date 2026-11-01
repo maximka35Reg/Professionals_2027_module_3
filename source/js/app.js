@@ -189,7 +189,7 @@ function RenderRecipes() {
     container.innerHTML = visibleRecipes.map(r => `
         <div class="recipe-card">
             <h3>${r.title}</h3>
-            ${r.image ? `<img src="${r.image}" alt="${r.title}">` : '<img src="/source/images/picture.png" alt="${r.title}">'}
+            ${r.image ? `<img src="${r.image}" alt="${r.title}">` : '<img src="source/images/picture.png" alt="${r.title}">'}
 
             <div class="card-info">
                 <p><strong>Описание:</strong> ${r.description}</p>
@@ -382,7 +382,7 @@ function MyRecipesPage() {
             ${myRecipes.length === 0 ? '<p>У вас пока нет рецептов</p>' : myRecipes.map(r => `
                 <div class="recipe-card">
                     <h3>${r.title}</h3>
-                    ${r.image ? `<img src="${r.image}" alt="${r.title}">` : '<img src="/source/images/picture.png" alt="${r.title}">'}
+                    ${r.image ? `<img src="${r.image}" alt="${r.title}">` : '<img src="source/images/picture.png" alt="${r.title}">'}
                     
                     <div class="card-info">
                         <p><strong>Описание:</strong> ${r.description}</p>
@@ -432,7 +432,7 @@ function ViewRecipe(id) {
         <button type="button" onclick="MainPage()">На главную</button>
         
         <div class="recipe-card">
-            ${recipe.image ? `<img src="${recipe.image}" alt="${recipe.title}">` : '<img src="/source/images/picture.png" alt="${recipe.title}">'}
+            ${recipe.image ? `<img src="${recipe.image}" alt="${recipe.title}">` : '<img src="source/images/picture.png" alt="${recipe.title}">'}
 
             <div class="inner-container">
                 <div class="card-info">
@@ -531,8 +531,8 @@ function SearchByIngredients() {
         return;
     }
 
-    const found = recipes.filter(r =>
-        r.ingredients && selectedIngredients.some(i => r.ingredients.includes(i))
+    const found = recipes.filter(r => 
+        (r.isPublic || r.author === currentUser.name) && r.ingredients && selectedIngredients.some(i => r.ingredients.includes(i))
     );
 
     if (found.length === 0) {
@@ -548,7 +548,7 @@ function SearchByIngredients() {
         ${found.map(r => `
             <div class="recipe-card">
             <h3>${r.title}</h3>
-            ${r.image ? `<img src="${r.image}" alt="${r.title}">` : '<img src="/source/images/picture.png" alt="${r.title}">'}
+            ${r.image ? `<img src="${r.image}" alt="${r.title}">` : '<img src="source/images/picture.png" alt="${r.title}">'}
 
             <div class="card-info">
                 <p><strong>Описание:</strong> ${r.description}</p>

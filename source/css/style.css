@@ -93,6 +93,7 @@ button {
     height: 20px;
 }
 
+.form-group textarea.error,
 .form-group input.error {
     border: 2px solid red;
 }
@@ -131,11 +132,12 @@ button {
     padding: 0 10px;
 }
 
-.recipesList {
+.recipesList, #recipesList {
     display: grid;
     grid-template-columns: repeat(auto-fill, 450px);
-    gap: 15px;
+    gap: 20px;
     margin-top: 20px;
+    width: 100%;
 }
 
 .recipe-card {
